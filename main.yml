@@ -1,0 +1,5 @@
+- name: Roboshop project playbook
+  hosts: all
+  become: true
+  roles:
+    - "{{ role_name }}" # this command line argument
