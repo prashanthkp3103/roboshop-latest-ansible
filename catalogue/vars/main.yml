@@ -4,4 +4,4 @@ schema_setup: mongo
 schema_files:
   - master-data
 #below is to pull secrets from vaults
-secrets: "{{ lookup('hashi_vault', 'secret=roboshop-{{env}}/data/catalogue token={{vault_token}} url=https://ppkvault.meppk.xyz:8200 validate_certs=False')}}"
+secrets: "{{ lookup('hashi_vault', 'secret=roboshop-{{env}}/data/catalogue token={{vault_token}} url=https://ppkvault.meppk.xyz:8200 validate_certs=false')}}"
