@@ -1,4 +1,4 @@
 component: user
 app_path: /app
 #below is to pull secrets from vaults
-secrets: "{{ lookup('hashi_vault', 'secret=roboshop-{{env}}/data/user token={{ vault_token }} url=https://ppkvault.meppk.xyz:8200 validate_certs=False')}}"
+secrets: "{{ lookup('hashi_vault', 'secret=roboshop-{{env}}/data/user token={{ vault_token }} url=https://vault-internal.meppk.xyz:8200 validate_certs=False')}}"
