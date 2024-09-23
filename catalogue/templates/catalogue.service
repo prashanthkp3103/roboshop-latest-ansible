@@ -6,7 +6,7 @@ User=roboshop
 #Environment=MONGO=true
 Environment=MONGO={{ secrets.MONGO }}
 #Environment=MONGO_URL="mongodb://mongo.{{ env }}.meppk.xyz/catalogue"
-Environment=MONGO_URL={{ secrets.MONGO_URL }}
+Environment=MONGO_URL="{{ secrets.MONGO_URL }}"
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=catalogue
 
