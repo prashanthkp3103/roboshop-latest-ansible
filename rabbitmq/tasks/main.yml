@@ -15,6 +15,6 @@
     state: restarted
     enabled: true
 
-- name: Setting Rabbitmq permissions
+- name: Create application user
   ansible.builtin.shell: rabbitmqctl add_user {{ secrets.AMQP_USER }} {{ secrets.AMQP_PASS }} ; rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
   #PASSWORDS COMES FROM VAULT
