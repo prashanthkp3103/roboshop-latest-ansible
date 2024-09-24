@@ -1,9 +1,9 @@
-[Unit]
+    [Unit]
 Description=Shipping Service
 
 [Service]
 User={{ secrets.User}}
-Environment=CART_ENDPOINT={{ secrets.CART_ENDPOINT}}
+Environment=CART_ENDPOINT={{ secrets.CART_ENDPOINT }}
 Environment=DB_HOST={{ secrets.DB_HOST }}
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
