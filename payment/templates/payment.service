@@ -11,7 +11,7 @@ Environment=USER_HOST={{ secrets. USER_HOST }}
 Environment=USER_PORT={{ secrets.USER_PORT }}
 Environment=AMQP_HOST={{ secrets.AMQP_HOST }}
 Environment=AMQP_USER={{ secrets.AMQP_USER }}
-Environment=AMQP_PASS={{ secrets.AMQP_PASS}}
+Environment=AMQP_PASS={{ secrets.AMQP_PASS }}
 
 ExecStart=/usr/local/bin/uwsgi --ini payment.ini
 ExecStop=/bin/kill -9 $MAINPID
