@@ -1,0 +1,31 @@
+
+#dnf install docker -y
+#docker run -d -p 8080:8080 -e CATALOGUE_HOST=catalogue-ip -e CATALOGUE_PORT=8080 -e REDIS_HOST=redis-ip public.ecr.aws/w8x4g9h7/roboshop-v3/cart
+
+  -  name: Run catalogue container
+     containers.podman.podman.container:
+       name: catalogue
+       image: public.ecr.aws/w8x4g9h7/roboshop-v3/catalogue
+       state: started
+       ports:
+         - "8080:8080"
+       env:
+          MONGO_URL="{{ secrets.MONGO_URL }}"
+          MONGO="{{ secrets.MONGO }}"
+
+  - name: Load Master data container
+    containers.podman.podman.container:
+      name: master-data
+      image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+      state: started
+      env:
+        DB_TYPE= "{{ secrets.DB_TYPE }}"
+        APP_GIT_URL= "https://github.com/roboshop-devops-project-v3/catalogue"
+        DB_HOST= "{{ secrets.DB_HOST }}"
+        SCHEMA_FILE= "{{ secrets.SCHEMA_FILE }}"
+
+#Catalogue requires master-data to be loaded.
+
+
+
+

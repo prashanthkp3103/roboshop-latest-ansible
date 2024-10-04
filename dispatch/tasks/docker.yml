@@ -1,0 +1,18 @@
+
+#dnf install docker -y
+#docker run -d -p 8080:8080 -e CATALOGUE_HOST=catalogue-ip -e CATALOGUE_PORT=8080 -e REDIS_HOST=redis-ip public.ecr.aws/w8x4g9h7/roboshop-v3/cart
+
+  -  name: Run dispatch container
+     containers.podman.podman.container:
+       name: dispatch
+       image: public.ecr.aws/w8x4g9h7/roboshop-v3/dispatch
+       state: started
+       ports:
+         - "8080:8080"
+       env:
+          AMQP_HOST="{{ secrets.AMQP_HOST }}"
+          AMQP_USER="{{ secrets.AMQP_USER }}"
+          AMQP_PASS="{{ secrets.AMQP_PASS }}"
+
+
+
