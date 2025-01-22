@@ -22,8 +22,8 @@
         #DB_TYPE: "{{ secrets.DB_TYPE }}"
         DB_TYPE: "mongo"
         APP_GIT_URL: "https://github.com/roboshop-devops-project-v3/catalogue"
-        #DB_HOST: "{{ secrets.DB_HOST }}"
-        DB_HOST: "mongo.{{env}}.{{domain_name}}"
+        DB_HOST: "{{ secrets.DB_HOST }}"
+        #DB_HOST: "mongo.{{env}}.{{domain_name}}"
         #keep it in vault in case value would change
         SCHEMA_FILE: "db/master-data.js"
 
