@@ -27,7 +27,7 @@
         #keep it in vault in case value would change
         SCHEMA_FILE: "db/master-data.js"
 
-#Catalogue requires master-data to be loaded.
+  #Catalogue requires master-data to be loaded.
 
 
 
