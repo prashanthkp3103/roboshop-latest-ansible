@@ -4,7 +4,7 @@
 
   -  name: Run user container
      containers.podman.podman_container:
-       name: dispatch
+       name: user
        image: public.ecr.aws/w8x4g9h7/roboshop-v3/user
        state: started
        ports:
