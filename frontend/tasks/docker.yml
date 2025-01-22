@@ -3,8 +3,8 @@
 #docker run -d -p 8080:8080 -e CATALOGUE_HOST:catalogue-ip -e CATALOGUE_PORT:8080 -e REDIS_HOST:redis-ip public.ecr.aws/w8x4g9h7/roboshop-v3/cart
 
   -  name: Run frontend container
-     containers.podman.podman.container:
-       name: dispatch
+     containers.podman.podman_container:
+       name: frontend
        image: public.ecr.aws/w8x4g9h7/roboshop-v3/frontend
        state: started
        ports:
