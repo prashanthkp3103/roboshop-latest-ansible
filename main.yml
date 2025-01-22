@@ -1,5 +1,8 @@
 - name: Roboshop project playbook
   hosts: all
   become: true
+#  vars:
+#    domain_name: meppk.xyz
+
   roles:
     - "{{ role_name }}" # this command line argument

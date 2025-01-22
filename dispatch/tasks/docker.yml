@@ -10,9 +10,9 @@
        ports:
          - "8080:8080"
        env:
-          AMQP_HOST="{{ secrets.AMQP_HOST }}"
-          AMQP_USER="{{ secrets.AMQP_USER }}"
-          AMQP_PASS="{{ secrets.AMQP_PASS }}"
+          AMQP_HOST:"{{ secrets.AMQP_HOST }}"
+          AMQP_USER:"{{ secrets.AMQP_USER }}"
+          AMQP_PASS:"{{ secrets.AMQP_PASS }}"
 
 
 

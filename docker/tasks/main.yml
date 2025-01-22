@@ -1,4 +1,6 @@
 -  name: create app container
    ansible.builtin.include_role:
+     # calling respective component name via ansible command line argument
      name: "{{ app_name }}"
+     #calling docker.yml from each component
      tasks_from: docker
