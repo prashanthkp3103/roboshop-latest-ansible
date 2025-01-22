@@ -15,7 +15,7 @@
           USER_HOST: "{{ secrets. USER_HOST }}"
           USER_PORT: "{{ secrets.USER_PORT }}"
           AMQP_HOST: "{{ secrets.AMQP_HOST }}"
-          AMQP_USER: {{ secrets.AMQP_USER }}"
+          AMQP_USER: "{{ secrets.AMQP_USER }}"
           AMQP_PASS: "{{ secrets.AMQP_PASS }}"
 
 
