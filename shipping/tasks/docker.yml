@@ -13,23 +13,23 @@
           CART_ENDPOINT: "{{ secrets.CART_ENDPOINT }}"
           DB_HOST: "{{ secrets.DB_HOST }}"
 
-  - name: Load schema container
-    loop:
-      - app-user
-      - schema
-      - master-data
-    containers.podman.podman_container:
-      name: "{{ item }}"
-      image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
-      state: started
-      env:
-        DB_TYPE:  "{{ secrets.DB_TYPE }}"
-        APP_GIT_URL:  "{{ secrets.APP_GIT_URL }}"
-        DB_HOST:  "{{ secrets.DB_HOST }}"
-        DB_USER:  "{{ secrets.DB_USER }}"
-        DB_PASS:  "{{ secrets.DB_PASS }}"
-        #below loop gets executed
-        SCHEMA_FILE:  "db/{{ item }}.sql"
+  -  name: Load schema container
+     loop:
+       - app-user
+       - schema
+       - master-data
+     containers.podman.podman_container:
+       name: "{{ item }}"
+       image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+       state: started
+       env:
+         DB_TYPE:  "{{ secrets.DB_TYPE }}"
+         APP_GIT_URL:  "{{ secrets.APP_GIT_URL }}"
+         DB_HOST:  "{{ secrets.DB_HOST }}"
+         DB_USER:  "{{ secrets.DB_USER }}"
+         DB_PASS:  "{{ secrets.DB_PASS }}"
+            #below loop gets executed
+         SCHEMA_FILE:  "db/{{ item }}.sql"
 
 
 
