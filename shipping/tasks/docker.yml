@@ -4,7 +4,7 @@
 
   -  name: Run shipping container
      containers.podman.podman_container:
-       name: dispatch
+       name: shipping
        image: public.ecr.aws/w8x4g9h7/roboshop-v3/shipping
        state: started
        ports:
@@ -22,8 +22,6 @@
       name: "{{ item }}"
       image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
       state: started
-      ports:
-        - "8080:8080"
       env:
         DB_TYPE:  "{{ secrets.DB_TYPE }}"
         APP_GIT_URL:  "{{ secrets.APP_GIT_URL }}"
