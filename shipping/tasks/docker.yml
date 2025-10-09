@@ -28,7 +28,7 @@
          DB_HOST:  "{{ secrets.DB_HOST }}"
          DB_USER:  "{{ secrets.DB_USER }}"
          DB_PASS:  "{{ secrets.DB_PASS }}"
-            #below loop gets executed
+         #below loop gets executed
          SCHEMA_FILE:  "db/{{ item }}.sql"
 
 
